@@ -1,8 +1,6 @@
 
 import { userModel } from "../models/user.js";
 
-
-
 export const getUsers = async (req, res) => {
     try {
         const users = await userModel.find();
@@ -19,6 +17,7 @@ export const sendDocuments = async (req, res) => {
         const newDocs = req.body;
 
         const user = await userModel.findByIdAndUpdate(uid, {
+                // push & each son metodos de mongoDB
             $push: {
                 documents: {
                     $each: newDocs

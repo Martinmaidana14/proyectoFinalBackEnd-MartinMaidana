@@ -1,6 +1,8 @@
-import cartModel from "../models/cart.js";
-import productModel from "../models/product.js";
-import ticketModel from "../models/ticket.js";
+
+import cartModel from "../models/cart.js"
+import productModel from "../models/product.js"
+import ticketModel from "../models/ticket.js"
+import { userModel } from '../models/user.js'
 
 // Ver que hay en el Carrito
 export const getCart = async (req, res) => {
@@ -129,4 +131,3 @@ export const createTicket = async (req, res) => {
         res.status(500).send(error);
     }
 };
-

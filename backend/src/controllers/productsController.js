@@ -80,6 +80,7 @@ export const updateProduct = async (req, res) => {
 
 export const deleteProduct = async (req, res) => {
     try {
+        console.log(req.user.rol);
         if (req.user.rol == "Admin") {
             const idProducto = req.params.pid
             const mensaje = await productModel.findByIdAndDelete(idProducto)
@@ -91,5 +92,4 @@ export const deleteProduct = async (req, res) => {
     } catch (error) {
         res.status(500).send(`Error interno del servidor al eliminar producto: ${error}`)
     }
-
 }

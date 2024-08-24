@@ -1,0 +1,15 @@
+
+.card-products {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product-element {
+    margin: 10px;
+}
+
+.card-title {
+    text-align: center;
+}
