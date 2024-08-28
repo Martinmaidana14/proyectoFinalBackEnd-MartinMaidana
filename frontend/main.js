@@ -14,7 +14,7 @@ botonSaludo.addEventListener('click', () => {
         .catch((e) => console.log(e));
 });
 
-fetch('http://localhost:4000/saludo')
+fetch('http://localhost:4000/api/products')
     .then((res) => res.json())
     .then((prods) => {
         mostrarProductos(prods);
@@ -34,15 +34,15 @@ function mostrarProductos(prods) {
         productElement.className = 'product-element';
 
         productElement.innerHTML = `
-      <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">${product.title}</h5>
-            <p class="card-text"><strong>Categoría: </strong> ${product.category}</p>
-            <p class="card-text"><strong>Descripción: </strong> ${product.description}</p>
-            <p class="card-text"><strong>Stock: </strong> ${product.stock} libros disponibles</p>
-            <a href="#" class="btn btn-primary">Comprar: $${product.price}</a>
-          </div>
-       </div>`;
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${product.title}</h5>
+                <p class="card-text"><strong>Categoría: </strong> ${product.category}</p>
+                <p class="card-text"><strong>Descripción: </strong> ${product.description}</p>
+                <p class="card-text"><strong>Stock: </strong> ${product.stock} libros disponibles</p>
+                <a href="#" class="btn btn-primary">Comprar: $${product.price}</a>
+            </div>
+        </div>`;
         productContainer.appendChild(productElement);
     });
 }
